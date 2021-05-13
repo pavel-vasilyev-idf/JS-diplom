@@ -15,7 +15,8 @@ const modalCallback = () => {
 		if (target.closest('.callback-btn') ||
 			(!target.closest('.modal-callback') &&
 			modalCallback.classList.contains('_active')) || (target.closest('.modal-close'))) {
-			displayCallback();
+                event.preventDefault();
+			    displayCallback();
 		}
 	};
 
