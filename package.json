@@ -1,22 +1,9 @@
 {
-  "name": "js-diplom",
+  "name": "JS-diplom",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
-  "scripts": {
-    "build": "webpack --config webpack.prod.config.js",
-    "dev": "webpack serve --config webpack.dev.config.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pavel-vasilyev-idf/JavaScript-lessons.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/pavel-vasilyev-idf/JavaScript-lessons/issues"
-  },
-  "homepage": "https://github.com/pavel-vasilyev-idf/JavaScript-lessons#readme",
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
@@ -25,6 +12,19 @@
     "webpack-cli": "^4.7.0",
     "webpack-dev-server": "^3.11.2"
   },
-  "dependencies": {},
-  "description": ""
+  "scripts": {
+    "build": "webpack --config webpack.prod.config.js",
+    "dev": "webpack serve --config webpack.dev.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pavel-vasilyev-idf/JS-diplom.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pavel-vasilyev-idf/JS-diplom/issues"
+  },
+  "homepage": "https://github.com/pavel-vasilyev-idf/JS-diplom#readme"
 }
