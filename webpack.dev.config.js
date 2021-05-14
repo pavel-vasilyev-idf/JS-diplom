@@ -1,7 +1,11 @@
 const path = require('path');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: [
+        "webpack-dev-server/client?http://127.0.0.0:9090/",
+        "webpack/hot/only-dev-server",
+        './src/index.js',
+    ],
     output: {
         filename: 'dev-bundle.js',
         path: path.resolve(__dirname, './dist')
