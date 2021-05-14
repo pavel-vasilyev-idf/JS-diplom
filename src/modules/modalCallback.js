@@ -6,6 +6,7 @@ const modalCallback = () => {
 
     const handlerCallback = (event) => {
 		const target = event.target;
+		
 
 		const displayCallback = () => {
 			modalCallback.classList.toggle('_active');

@@ -38,7 +38,18 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCallback */ \"./src/modules/modalCallback.js\");\n\n\n\n(0,_modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__.default)();\n\n//# sourceURL=webpack://JS-diplom/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCallback */ \"./src/modules/modalCallback.js\");\n/* harmony import */ var _modules_heroSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/heroSlider */ \"./src/modules/heroSlider.js\");\n\n\n\n\n(0,_modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_heroSlider__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://JS-diplom/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/heroSlider.js":
+/*!***********************************!*\
+  !*** ./src/modules/heroSlider.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n//slider\nvar heroSlider = function heroSlider() {\n  var slider = document.querySelector('.top-slider');\n  var slide = document.querySelectorAll('.item');\n  var tableActive = document.querySelectorAll('.table');\n  var currentSlide = 0; //Номер слайда, начинаем с нуля. Значение будет меняться\n\n  var interval = 0;\n\n  var prevSlide = function prevSlide(elemSlide, elemTable, index, strClass) {\n    elemSlide[index].classList.remove(strClass);\n    elemTable[index].classList.remove(strClass);\n  };\n\n  var nextSlide = function nextSlide(elemSlide, elemTable, index, strClass) {\n    elemSlide[index].classList.add(strClass);\n    elemTable[index].classList.add(strClass);\n  }; //автозапуск слайдов\n\n\n  var autoPlaySlide = function autoPlaySlide() {\n    prevSlide(slide, tableActive, currentSlide, 'active');\n    currentSlide++;\n\n    if (currentSlide >= slide.length) {\n      currentSlide = 0;\n    }\n\n    nextSlide(slide, tableActive, currentSlide, 'active');\n  }; //старт слайдера\n\n\n  var startSlide = function startSlide() {\n    var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3000;\n    interval = setInterval(autoPlaySlide, time);\n  };\n\n  startSlide(3000);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (heroSlider);\n\n//# sourceURL=webpack://JS-diplom/./src/modules/heroSlider.js?");
 
 /***/ }),
 
@@ -451,7 +462,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("15290af7aa09c6aa829a")
+/******/ 		__webpack_require__.h = () => ("df162ad01f20238d1d74")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
