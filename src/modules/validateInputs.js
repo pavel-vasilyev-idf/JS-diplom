@@ -1,9 +1,6 @@
 const validateInputs = () => {
-	const calcInputs = document.querySelectorAll('input.calc-item'),
-		formName = document.querySelectorAll('[name=user_name]'),
-		formMessage = document.querySelectorAll('[name=user_message]'),
-		formEmail = document.querySelectorAll('[name=user_email]'),
-		formPhone = document.querySelectorAll('[name=user_phone]');
+	const formName = document.querySelectorAll('[name=fio]'),
+		formPhone = document.querySelectorAll('[name=tel]');
 
 	let error = new Set();
 
@@ -21,7 +18,7 @@ const validateInputs = () => {
 		if (e.target.matches('.calc-item')) {
 			validateNumberInputs();
 		}
-		if (e.target.matches('[name=user_name]')) {
+		if (e.target.matches('[name=fio]')) {
 			e.target.value = e.target.value.replace(/[^а-яё\-\ ]/gi, '');
 		}
 		if (e.target.matches('#form2-message')) {
@@ -30,7 +27,7 @@ const validateInputs = () => {
 		if (e.target.matches('[name=user_email]')) {
 			e.target.value = e.target.value.replace(/[^a-z0-9\@\_\-\.\!\~\*\']/gi, '');
 		}
-		if (e.target.matches('[name=user_phone]')) {
+		if (e.target.matches('[name=tel]')) {
             e.target.value = e.target.value.replace(/[^\d\(\)\-\+]/g, '');
             if (e.target.value.length > 10) {
                 e.target.value = e.target.value.substring(0, 11)
@@ -72,20 +69,20 @@ const validateInputs = () => {
 		})
 	})
 
-	formMessage.forEach(el => {
-		el.addEventListener('blur', () => {
-			trim(el);
-			el.value = capitalize(el);
-			controlInputs(el, /[а-яё]{2,}/gi);
-		})
-	})
+	// formMessage.forEach(el => {
+	// 	el.addEventListener('blur', () => {
+	// 		trim(el);
+	// 		el.value = capitalize(el);
+	// 		controlInputs(el, /[а-яё]{2,}/gi);
+	// 	})
+	// })
 
-	formEmail.forEach(el => {
-        el.addEventListener('blur', () => {
-            el.value = el.value.replace(/\s/g, '');
-            controlInputs(el, /\w+@\w+.\w{2,3}/g);
-        })
-    })
+	// formEmail.forEach(el => {
+    //     el.addEventListener('blur', () => {
+    //         el.value = el.value.replace(/\s/g, '');
+    //         controlInputs(el, /\w+@\w+.\w{2,3}/g);
+    //     })
+    // })
 
 	formPhone.forEach(el => {
 		el.addEventListener('blur', () => {

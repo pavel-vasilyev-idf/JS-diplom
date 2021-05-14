@@ -20,7 +20,6 @@ const accordeonBlock = () => {
         const target = event.target;
         if (target.classList.contains('title')) {
             accordeonTitle.forEach( (item, i) => {
-                // item[0].classList.add('element-content_active')
                 if(item === target) {
                     toggleAccordeon(i);
                 }

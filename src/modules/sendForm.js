@@ -2,11 +2,11 @@ const sendForm = () => {
 	
   const errorMessage = 'Что-то пошло не так...';
   const loadMessage = 'Загрузка...';
-  const successMessage = 'Все успешно отпралвено';
+  const successMessage = 'Все успешно отправлено';
 
 
   const clearInput = (elem) => {
-    const form = document.getElementById(elem);
+    const form = document.querySelector(elem);
     [...form.elements].filter(item =>
         item.tagName.toLowerCase() !== 'button' &&
         item.type !== 'button').forEach(item =>
@@ -28,7 +28,7 @@ const sendForm = () => {
   }
 
   const sendSomeForm = (elem) => {
-    const form = document.getElementById(elem);
+    const form = document.querySelector(elem);
     const statusMessage = document.createElement('div');
     statusMessage.style.cssText = 'font-size: 3rem';
 
@@ -50,7 +50,7 @@ const sendForm = () => {
           clearInput(elem);
           setTimeout(() => {
           statusMessage.innerHTML = '';
-          document.querySelector('.popup').style.display = 'none';
+          document.querySelector('.modal-callback').style.display = 'none';
           }, 4000)
           let formInputs = form.querySelectorAll('input');
           formInputs.forEach(input => {
@@ -62,17 +62,14 @@ const sendForm = () => {
           console.error(error);
           setTimeout(() => {
           statusMessage.innerHTML = '';
-          document.querySelector('.popup').style.display = 'none';
+          document.querySelector('.modal-callback').style.display = 'none';
           }, 4000)
         })
 
     });
 };
 
-  sendSomeForm('form1');
-  sendSomeForm('form2');
-  sendSomeForm('form3');
-
+  sendSomeForm('form');
 
 }
 
