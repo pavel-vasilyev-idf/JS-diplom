@@ -1022,6 +1022,12 @@ video#video_background {
 	font-size: 13px;
 	color: #888885;
 }
+.accordeon .element-content_active {
+	display: block;
+	padding: 20px;
+	font-size: 13px;
+	color: #888885;
+}
 .accordeon .element {
 	margin-bottom: 6px;
 	background: #fff;
@@ -1046,6 +1052,11 @@ video#video_background {
 	background: #e9bb26;
 	color: #fff !important;
 }
+
+.accordeon .element.active .element-content {
+	display: block;
+}
+
 .accordeon .element .title:before {
 	font-family: "FontAwesome";
 	content: "";
@@ -1067,9 +1078,9 @@ video#video_background {
 .accordeon .element.active .title:before {
 	background: url(../images/minus.png) 50% 50% no-repeat #333;
 }
-.accordeon > div:first-of-type .element-content {
+/* .accordeon > div:first-of-type .element-content {
 	display: block;
-}
+} */
 .accordeon .element .title:hover:before {
 	background-color: #333;
 }
@@ -1171,7 +1182,12 @@ video#video_background {
 .services-section .element:hover .img-wrapper:after {
 	opacity: 1;
 }
-.services-section .element .img-wrapper:before {
+
+.img-wrapper_active {
+	z-index: 20;
+	cursor: pointer;
+}
+.services-section .element .img-wrapper_active:before {
 	content: "Оформить заявку";
 	display: block;
 	position: absolute;
@@ -1186,15 +1202,12 @@ video#video_background {
 	transition: all 200ms ease-out;
 	margin-top: -24px;
 	z-index: 2;
-	opacity: 0;
+	opacity: 1;
 	color: #fff;
 	padding: 10px 0;
 	text-align: center;
 	text-transform: uppercase;
 	border: 2px solid #fff;
-}
-.services-section .element:hover .img-wrapper:before {
-	opacity: 1;
 }
 .services-section .element .img-wrapper img {
 	-webkit-transition: all 200ms ease-out;

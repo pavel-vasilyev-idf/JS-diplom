@@ -38,7 +38,18 @@ eval("\nmodule.exports = function () {\n\treturn /[\\u001b\\u009b][[()#;?]*(?:[0
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCallback */ \"./src/modules/modalCallback.js\");\n/* harmony import */ var _modules_heroSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/heroSlider */ \"./src/modules/heroSlider.js\");\n\n\n\n\n(0,_modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_heroSlider__WEBPACK_IMPORTED_MODULE_1__.default)();\n\n//# sourceURL=webpack://JS-diplom/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modalCallback */ \"./src/modules/modalCallback.js\");\n/* harmony import */ var _modules_heroSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/heroSlider */ \"./src/modules/heroSlider.js\");\n/* harmony import */ var _modules_services__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/services */ \"./src/modules/services.js\");\n/* harmony import */ var _modules_accordeonBlock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/accordeonBlock */ \"./src/modules/accordeonBlock.js\");\n\n\n\n\n\n\n(0,_modules_modalCallback__WEBPACK_IMPORTED_MODULE_0__.default)();\n(0,_modules_heroSlider__WEBPACK_IMPORTED_MODULE_1__.default)();\n(0,_modules_services__WEBPACK_IMPORTED_MODULE_2__.default)();\n(0,_modules_accordeonBlock__WEBPACK_IMPORTED_MODULE_3__.default)();\n\n//# sourceURL=webpack://JS-diplom/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/accordeonBlock.js":
+/*!***************************************!*\
+  !*** ./src/modules/accordeonBlock.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar accordeonBlock = function accordeonBlock() {\n  var accordeon = document.querySelector('.accordeon');\n  var accordeonTitle = accordeon.querySelectorAll('.title');\n  var accordeonContent = accordeon.querySelectorAll('.element-content');\n\n  var toggleAccordeon = function toggleAccordeon(index) {\n    for (var i = 0; i < accordeonContent.length; i++) {\n      if (index === i) {\n        accordeonTitle[i].parentElement.classList.add('active');\n        accordeonContent[i].classList.add('element-content_active');\n      } else {\n        accordeonTitle[i].parentElement.classList.remove('active');\n        accordeonContent[i].classList.remove('element-content_active');\n      }\n    }\n  };\n\n  accordeon.addEventListener('click', function (event) {\n    var target = event.target;\n\n    if (target.classList.contains('title')) {\n      accordeonTitle.forEach(function (item, i) {\n        // item[0].classList.add('element-content_active')\n        if (item === target) {\n          toggleAccordeon(i);\n        }\n      });\n    }\n  });\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (accordeonBlock);\n\n//# sourceURL=webpack://JS-diplom/./src/modules/accordeonBlock.js?");
 
 /***/ }),
 
@@ -60,7 +71,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar modalCallback = function modalCallback() {\n  var modalCallback = document.querySelector('.modal-callback');\n  var modalOverlay = document.querySelector('.modal-overlay');\n\n  var handlerCallback = function handlerCallback(event) {\n    var target = event.target;\n\n    var displayCallback = function displayCallback() {\n      modalCallback.classList.toggle('_active');\n      modalOverlay.classList.toggle('_active');\n    };\n\n    if (target.closest('.callback-btn') || !target.closest('.modal-callback') && modalCallback.classList.contains('_active') || target.closest('.modal-close')) {\n      event.preventDefault();\n      displayCallback();\n    }\n  };\n\n  document.body.addEventListener('click', handlerCallback);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalCallback);\n\n//# sourceURL=webpack://JS-diplom/./src/modules/modalCallback.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar modalCallback = function modalCallback() {\n  var modalCallback = document.querySelector('.modal-callback');\n  var modalOverlay = document.querySelector('.modal-overlay');\n\n  var handlerCallback = function handlerCallback(event) {\n    var target = event.target;\n\n    var displayCallback = function displayCallback() {\n      modalCallback.classList.toggle('_active');\n      modalOverlay.classList.toggle('_active');\n    };\n\n    if (target.closest('.callback-btn') || target.closest('.img-wrapper_active') || target.closest('.button-services') || !target.closest('.modal-callback') && modalCallback.classList.contains('_active') || target.closest('.modal-close')) {\n      event.preventDefault();\n      displayCallback();\n    }\n  };\n\n  document.body.addEventListener('click', handlerCallback);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modalCallback);\n\n//# sourceURL=webpack://JS-diplom/./src/modules/modalCallback.js?");
+
+/***/ }),
+
+/***/ "./src/modules/services.js":
+/*!*********************************!*\
+  !*** ./src/modules/services.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar services = function services() {\n  var servicesElements = document.querySelector('.services-elements');\n\n  var openModal = function openModal(event) {\n    var target = event.target;\n    var parent = target.parentNode;\n    var imageWrapper = parent.children[1];\n    imageWrapper.classList.add('img-wrapper_active');\n  };\n\n  var closeModal = function closeModal(event) {\n    var target = event.target;\n    var parent = target.parentNode;\n    var imageWrapper = parent.children[1];\n    imageWrapper.classList.remove('img-wrapper_active');\n  };\n\n  servicesElements.addEventListener('mouseover', openModal);\n  servicesElements.addEventListener('mouseout', closeModal); //caurusel\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (services);\n\n//# sourceURL=webpack://JS-diplom/./src/modules/services.js?");
 
 /***/ }),
 
@@ -462,7 +484,7 @@ eval("var map = {\n\t\"./log\": \"./node_modules/webpack/hot/log.js\"\n};\n\n\nf
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("df162ad01f20238d1d74")
+/******/ 		__webpack_require__.h = () => ("1eae7b476a54b02588a0")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -3,17 +3,15 @@ const modalCallback = () => {
     const modalOverlay = document.querySelector('.modal-overlay');
 
 
-
     const handlerCallback = (event) => {
 		const target = event.target;
 		
-
 		const displayCallback = () => {
 			modalCallback.classList.toggle('_active');
 			modalOverlay.classList.toggle('_active');
 		};
 
-		if (target.closest('.callback-btn') ||
+		if (target.closest('.callback-btn') || target.closest('.img-wrapper_active') || target.closest('.button-services') ||
 			(!target.closest('.modal-callback') &&
 			modalCallback.classList.contains('_active')) || (target.closest('.modal-close'))) {
                 event.preventDefault();
