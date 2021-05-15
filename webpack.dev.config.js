@@ -1,11 +1,7 @@
 const path = require('path');
 
 module.exports = {
-    entry: [
-        "webpack-dev-server/client?http://127.0.0.0:8080/",
-        "webpack/hot/only-dev-server",
-        './src/index.js',
-    ],
+    entry: './src/index.js',
     output: {
         filename: 'dev-bundle.js',
         path: path.resolve(__dirname, './dist')
@@ -13,7 +9,7 @@ module.exports = {
     mode: 'development',
     devServer: {
         open: true,
-        // port: 9090,
+        port: 9090,
         hot: true,
         writeToDisk: true,
     },
