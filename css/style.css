@@ -1285,7 +1285,6 @@ video#video_background {
 
 .services-carousel .col-sm-6.col-md-4 {
 	/* position: absolute; */
-	transition: margin-left 250ms;
 	min-width: 33.333333%;
 }
 

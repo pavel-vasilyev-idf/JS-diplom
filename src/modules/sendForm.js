@@ -10,7 +10,7 @@ const sendForm = () => {
     [...form.elements].filter(item =>
         item.tagName.toLowerCase() !== 'button' &&
         item.type !== 'button').forEach(item =>
-        item.value = '');
+        item.value = item.defaultValue);
   };
 
 
@@ -50,7 +50,8 @@ const sendForm = () => {
           clearInput(elem);
           setTimeout(() => {
           statusMessage.innerHTML = '';
-          document.querySelector('.modal-callback').style.display = 'none';
+          document.querySelector('.modal-callback').classList.toggle('_active');
+          document.querySelector('.modal-overlay').classList.toggle('_active');
           }, 4000)
           let formInputs = form.querySelectorAll('input');
           formInputs.forEach(input => {
@@ -62,7 +63,8 @@ const sendForm = () => {
           console.error(error);
           setTimeout(() => {
           statusMessage.innerHTML = '';
-          document.querySelector('.modal-callback').style.display = 'none';
+          document.querySelector('.modal-callback').classList.toggle('_active');
+          document.querySelector('.modal-overlay').classList.toggle('_active');
           }, 4000)
         })
 
