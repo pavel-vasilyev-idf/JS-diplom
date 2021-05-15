@@ -7,8 +7,9 @@ const carousel = () => {
 
     let i = 0; // номер текущей картинки, на экране
 
-    arrowRight.onclick = function(){
+    arrowLeft.onclick = function(){
         slides[i].style.display = 'none';  // прячем текущую картину
+        slides[i + 1] = slides[i]
         i++
     
         if(i >= slides.length){
@@ -18,9 +19,9 @@ const carousel = () => {
     }
 
 
-    arrowLeft.onclick = function(){
+    arrowRight.onclick = function(){
         slides[i].style.display = 'none';
-        i = i - 1;
+        i--;
         if(i < 0){
             i = slides.length - 1;
         }
