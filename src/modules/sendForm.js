@@ -36,7 +36,7 @@ const sendForm = () => {
       event.preventDefault();
       form.appendChild(statusMessage);
       statusMessage.innerHTML = `
-        <img src="https://i.gifer.com/YmvJ.gif" alt="cat">
+        <img src="./images/YmvJ.gif" alt="cat">
       `;
 
       const formData = new FormData(form);
